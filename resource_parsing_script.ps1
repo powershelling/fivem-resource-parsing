@@ -13,8 +13,8 @@
 
 #region variables
 # Définition des variables
-$serverconfig = "D:\Adrenaline\Serveurs\Officiel\server-data\server.cfg"
-$resource_folder = "D:\Adrenaline\Serveurs\Officiel\server-data\resources\"
+$serverconfig = "path_of_your_server.cfg"
+$resource_folder = "path_of_your_resources_folder"
 #endregion
 
 # Récupération des lignes du fichier de configuration contenant le mot-clé "ensure"
@@ -76,5 +76,5 @@ $ht = foreach ($key in $hashTable.Keys) {
 $htSorted = $ht | Sort-Object -Property @{Expression={[int]$_.Index}}
 
 # Affichage du résultat final
-$htSorted | ogv
+$htSorted | out-gridview
 
